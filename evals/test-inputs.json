@@ -1,0 +1,98 @@
+{
+  "skill_name": "research",
+  "test_inputs": [
+    {
+      "id": 1,
+      "name": "deep-research-unfamiliar-topic",
+      "subcommand": "deep",
+      "prompt": "/research deep the psychology of career indecision in high-achievers — why do successful people get stuck choosing what's next?",
+      "expected_behavior": "Full 5-phase deep research at 4,000-8,000 words with domain map, all 5 layers, confidence labels, self-audit, and shelf-life markers",
+      "success_criteria": [
+        "Runs brainstorm gate: restates question, sharpens angle, surfaces assumptions",
+        "Reads sam.md for user context before starting",
+        "Checks /research/outputs/ for prior art",
+        "Produces domain map (3-8 sentences) before any source gathering",
+        "Uses at least 3 different search channels and conducts 8+ searches",
+        "Sources organized by tier with quality signals assessed",
+        "All 5 analysis layers present: Foundations, Evidence, Tactics, Contrarian, So What",
+        "Every substantive claim has a confidence label (1-5 star scale)",
+        "Self-audit section present addressing all 8 checks",
+        "Shelf-life markers assigned (Durable/Monitor/Perishable)",
+        "Source log table with tier, found-via, and contribution columns",
+        "Saved to /research/outputs/[slug].md",
+        "No unverified training-data claims presented as sourced fact",
+        "Counter-evidence actively searched for major claims"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "quick-brief",
+      "subcommand": "quick",
+      "prompt": "/research quick evidence-based negotiation tactics for salary discussions",
+      "expected_behavior": "Research brief at 1,500-2,500 words with domain map, top findings, top tactics, and source log",
+      "success_criteria": [
+        "Output is 1,500-2,500 words (not deep research length)",
+        "Domain map present (3-5 sentences)",
+        "3-5 key findings with confidence labels",
+        "3-5 practical tactics tied to evidence",
+        "'What I'd Want to Know More About' section present",
+        "Source log with top sources",
+        "Uses at least 2 search channels and 5+ searches",
+        "Saved with -brief suffix",
+        "Confidence labels present on all findings",
+        "Shelf-life marker assigned"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "contrarian-analysis",
+      "subcommand": "contrarian",
+      "prompt": "/research contrarian the benefits of remote work — steelman the case that return-to-office is actually better for most companies",
+      "expected_behavior": "Focused contrarian/minority view analysis steelmanning RTO arguments with evidence",
+      "success_criteria": [
+        "Addresses all 5 contrarian dimensions: replication concerns, practitioner-academic gaps, emerging counter-evidence, structural critiques, credible outlier perspectives",
+        "Each contrarian position presented in its strongest form (steelmanned)",
+        "Every claim confidence-labeled",
+        "Does not manufacture dissent — if some dimensions have no credible contrarian position, says so",
+        "Sources actual counter-evidence rather than hypothetical arguments",
+        "Distinguishes between popular contrarian talking points and evidence-backed challenges",
+        "Saved with -contrarian suffix"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "domain-map",
+      "subcommand": "map",
+      "prompt": "/research map behavioral economics and decision-making under uncertainty",
+      "expected_behavior": "500-1,000 word domain map covering key researchers, institutions, debates, texts, and field direction",
+      "success_criteria": [
+        "Output is 500-1,000 words (orientation level, not full research)",
+        "Covers: key researchers and institutions",
+        "Covers: major schools of thought / competing frameworks",
+        "Covers: foundational texts",
+        "Covers: major debates and open questions",
+        "Covers: where the field is heading",
+        "Saved with -map suffix",
+        "Useful for deciding what to research in depth next — surfaces choice points"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "tactics-extraction",
+      "subcommand": "tactics",
+      "prompt": "/research tactics managing energy (not time) for sustained deep work — specific protocols, not theory",
+      "expected_behavior": "Actionable tactics grounded in evidence, skipping theory, with difficulty and impact labels",
+      "success_criteria": [
+        "Checks /research/outputs/ for existing research on the topic",
+        "Tactics are concrete enough to execute (specific protocols, not platitudes)",
+        "Each tactic tied to evidence with source attribution",
+        "Each tactic labeled for implementation difficulty and expected impact",
+        "Each tactic confidence-labeled",
+        "No extended theory sections — tactics-first structure",
+        "Saved with -tactics suffix",
+        "At least 5 distinct, implementable tactics",
+        "Named sources with specifics, not 'studies show'"
+      ]
+    }
+  ]
+}

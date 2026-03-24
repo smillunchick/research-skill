@@ -1,0 +1,94 @@
+{
+  "skill_name": "research",
+  "rubric": {
+    "default_dimensions": [
+      {
+        "name": "source-grounded",
+        "description": "Claims cite real, verifiable sources found via search in the current session. No training-data assertions presented as fact. Studies verified via Crossref where applicable. Named researchers, specific data, not 'studies show'.",
+        "min_score": 8,
+        "weight": 1.5
+      },
+      {
+        "name": "confidence-calibration",
+        "description": "Every substantive claim has a confidence label. Labels are well-calibrated — not inflated, not deflated. Unverified claims capped at 2 stars. Contested claims capped at 3 stars. Triangulation rule enforced (3+ sources for 'established').",
+        "min_score": 7,
+        "weight": 1.3
+      },
+      {
+        "name": "actionable",
+        "description": "Reader can take specific action based on findings. 'So what?' test passes for every major section. Tactics are concrete enough to execute, not abstract advice.",
+        "min_score": 7,
+        "weight": 1.0
+      },
+      {
+        "name": "intellectual-honesty",
+        "description": "Uncertainty stated plainly. Counter-evidence actively sought and presented. Missing evidence distinguished from negative evidence. Contrarian views steelmanned. No false precision.",
+        "min_score": 8,
+        "weight": 1.3
+      },
+      {
+        "name": "structure-compliance",
+        "description": "Output follows the correct template for the mode (deep, quick, sources, etc.). All required sections present. Source log formatted correctly. Saved to correct path with correct suffix.",
+        "min_score": 7,
+        "weight": 1.0
+      },
+      {
+        "name": "search-thoroughness",
+        "description": "Meets minimum search depth for the mode (8+ for deep, 5+ for quick). Uses 3+ different search channels. Academic sources checked. Counter-evidence searched. Stopping rules respected.",
+        "min_score": 7,
+        "weight": 1.2
+      },
+      {
+        "name": "concise",
+        "description": "Dense with insight, light on filler. Every section earns its place. No padding sentences. Within target length for the mode.",
+        "min_score": 7,
+        "weight": 1.0
+      }
+    ],
+    "mode_specific_dimensions": {
+      "deep": [
+        {
+          "name": "layer-completeness",
+          "description": "All 5 analysis layers present and substantive: Foundations, Evidence Landscape, Practical Tactics, Contrarian Views, Decision Translation. Self-audit addresses all 8 checks.",
+          "min_score": 7,
+          "weight": 1.0
+        }
+      ],
+      "contrarian": [
+        {
+          "name": "steelman-quality",
+          "description": "Contrarian positions presented in their strongest form. Not strawmanned, not dismissed. Five dimensions addressed: replication, practitioner-academic gap, emerging evidence, structural critiques, credible outliers.",
+          "min_score": 8,
+          "weight": 1.3
+        }
+      ],
+      "harvest": [
+        {
+          "name": "tag-coverage",
+          "description": "At least 2 elements per tag type (STAT, QUOTE, FRAMEWORK, STORY, CONTRARIAN, TACTIC). Multi-tag elements identified. Gaps noted with diagnosis.",
+          "min_score": 7,
+          "weight": 1.0
+        },
+        {
+          "name": "content-potential",
+          "description": "Hooks are compelling and platform-appropriate. Format recommendations are justified. Prioritization is sensible (surprising > confirming, emotional > abstract).",
+          "min_score": 7,
+          "weight": 1.0
+        }
+      ],
+      "tactics": [
+        {
+          "name": "executability",
+          "description": "Tactics are specific enough to execute without further research. Include when/how/why, not just what. Difficulty and impact labeled.",
+          "min_score": 8,
+          "weight": 1.3
+        }
+      ]
+    },
+    "scoring": {
+      "pass": "All dimensions >= min_score",
+      "conditional_pass": "1-2 dimensions between 5-6, rest >= min_score",
+      "fail": "Any dimension < 5, or 3+ dimensions below min_score"
+    }
+  }
+}
