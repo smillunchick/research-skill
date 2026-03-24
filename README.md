@@ -118,7 +118,7 @@ This research skill is one piece of a larger system. I build AI-native skill sys
 
 If you want help building custom skills for your team or extending this system for your specific domain:
 
-**[sam@thinkmetis.co](mailto:sam@thinkmetis.co)** | **[thinkmetis.co](https://thinkmetis.co)**
+**sam (at) thinkmetis.co** | **[thinkmetis.co](https://thinkmetis.co)**
 
 ---
 
